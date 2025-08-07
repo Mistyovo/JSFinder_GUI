@@ -198,25 +198,82 @@ class JSFinderGUI:
         self.urls_frame = ttk.Frame(self.notebook)
         self.notebook.add(self.urls_frame, text="URLs")
         
-        self.urls_text = scrolledtext.ScrolledText(self.urls_frame, font=('Consolas', 9), 
-                                                  wrap=tk.WORD, state=tk.DISABLED)
-        self.urls_text.pack(fill=tk.BOTH, expand=True)
+        # 创建带有水平和垂直滚动条的文本框
+        urls_container = ttk.Frame(self.urls_frame)
+        urls_container.pack(fill=tk.BOTH, expand=True)
+        
+        self.urls_text = tk.Text(urls_container, font=('Consolas', 9), 
+                                wrap=tk.NONE, state=tk.DISABLED)
+        
+        # 垂直滚动条
+        urls_v_scrollbar = ttk.Scrollbar(urls_container, orient=tk.VERTICAL, command=self.urls_text.yview)
+        self.urls_text.configure(yscrollcommand=urls_v_scrollbar.set)
+        
+        # 水平滚动条
+        urls_h_scrollbar = ttk.Scrollbar(urls_container, orient=tk.HORIZONTAL, command=self.urls_text.xview)
+        self.urls_text.configure(xscrollcommand=urls_h_scrollbar.set)
+        
+        # 布局
+        self.urls_text.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        urls_v_scrollbar.grid(row=0, column=1, sticky=(tk.N, tk.S))
+        urls_h_scrollbar.grid(row=1, column=0, sticky=(tk.W, tk.E))
+        
+        urls_container.grid_columnconfigure(0, weight=1)
+        urls_container.grid_rowconfigure(0, weight=1)
         
         # 子域名标签页
         self.subdomains_frame = ttk.Frame(self.notebook)
         self.notebook.add(self.subdomains_frame, text="子域名")
         
-        self.subdomains_text = scrolledtext.ScrolledText(self.subdomains_frame, font=('Consolas', 9), 
-                                                        wrap=tk.WORD, state=tk.DISABLED)
-        self.subdomains_text.pack(fill=tk.BOTH, expand=True)
+        # 创建带有水平和垂直滚动条的文本框
+        subdomains_container = ttk.Frame(self.subdomains_frame)
+        subdomains_container.pack(fill=tk.BOTH, expand=True)
+        
+        self.subdomains_text = tk.Text(subdomains_container, font=('Consolas', 9), 
+                                      wrap=tk.NONE, state=tk.DISABLED)
+        
+        # 垂直滚动条
+        subdomains_v_scrollbar = ttk.Scrollbar(subdomains_container, orient=tk.VERTICAL, command=self.subdomains_text.yview)
+        self.subdomains_text.configure(yscrollcommand=subdomains_v_scrollbar.set)
+        
+        # 水平滚动条
+        subdomains_h_scrollbar = ttk.Scrollbar(subdomains_container, orient=tk.HORIZONTAL, command=self.subdomains_text.xview)
+        self.subdomains_text.configure(xscrollcommand=subdomains_h_scrollbar.set)
+        
+        # 布局
+        self.subdomains_text.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        subdomains_v_scrollbar.grid(row=0, column=1, sticky=(tk.N, tk.S))
+        subdomains_h_scrollbar.grid(row=1, column=0, sticky=(tk.W, tk.E))
+        
+        subdomains_container.grid_columnconfigure(0, weight=1)
+        subdomains_container.grid_rowconfigure(0, weight=1)
         
         # 日志标签页
         self.log_frame = ttk.Frame(self.notebook)
         self.notebook.add(self.log_frame, text="扫描日志")
         
-        self.log_text = scrolledtext.ScrolledText(self.log_frame, font=('Consolas', 9), 
-                                                 wrap=tk.WORD, state=tk.DISABLED)
-        self.log_text.pack(fill=tk.BOTH, expand=True)
+        # 创建带有水平和垂直滚动条的文本框
+        log_container = ttk.Frame(self.log_frame)
+        log_container.pack(fill=tk.BOTH, expand=True)
+        
+        self.log_text = tk.Text(log_container, font=('Consolas', 9), 
+                               wrap=tk.NONE, state=tk.DISABLED)
+        
+        # 垂直滚动条
+        log_v_scrollbar = ttk.Scrollbar(log_container, orient=tk.VERTICAL, command=self.log_text.yview)
+        self.log_text.configure(yscrollcommand=log_v_scrollbar.set)
+        
+        # 水平滚动条
+        log_h_scrollbar = ttk.Scrollbar(log_container, orient=tk.HORIZONTAL, command=self.log_text.xview)
+        self.log_text.configure(xscrollcommand=log_h_scrollbar.set)
+        
+        # 布局
+        self.log_text.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        log_v_scrollbar.grid(row=0, column=1, sticky=(tk.N, tk.S))
+        log_h_scrollbar.grid(row=1, column=0, sticky=(tk.W, tk.E))
+        
+        log_container.grid_columnconfigure(0, weight=1)
+        log_container.grid_rowconfigure(0, weight=1)
         
         # 初始化界面状态
         self.on_mode_change()
