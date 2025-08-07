@@ -19,7 +19,7 @@ JSFinder GUI是基于原版[JSFinder](https://github.com/Threezh1/JSFinder)命�
 
 ## 🎯 预览截图
 
-> 注：添加软件截图可以让用户更直观了解界面
+![](https://sm.ms/image/Lf3mwNPFST4lVtQ)
 
 ## 安装要求
 
