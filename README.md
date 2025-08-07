@@ -1,7 +1,7 @@
 # JSFinder GUI
 
 ![Python](https://img.shields.io/badge/python-3.6%2B-blue.svg)
-![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)
+![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 
 JSFinder GUI 是基于经典的 [JSFinder](https://github.com/Threezh1/JSFinder) 命令行工具开发的现代化图形界面版本。这是一个专业的网络安全工具，用于从网页和JavaScript文件中智能提取URL、子域名等敏感信息，广泛应用于渗透测试、漏洞挖掘和网络侦察场景。
 
