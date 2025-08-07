@@ -19,7 +19,7 @@ JSFinder GUI是基于原版[JSFinder](https://github.com/Threezh1/JSFinder)命�
 
 ## 🎯 预览截图
 
-![5ed800cb-3ee2-4dec-85e1-64fb97ecc6dd.png](https://s2.loli.net/2025/08/07/Lf3mwNPFST4lVtQ.png)
+![](https://sm.ms/image/Lf3mwNPFST4lVtQ)
 
 ## 安装要求
 
@@ -27,26 +27,6 @@ JSFinder GUI是基于原版[JSFinder](https://github.com/Threezh1/JSFinder)命�
 - requests
 - beautifulsoup4
 - urllib3
-
-## 快速开始
-
-### 方法1：使用启动脚本（推荐）
-
-1. 双击运行 `start_gui.bat`
-2. 脚本会自动检查并安装依赖
-3. 自动启动GUI界面
-
-### 方法2：手动安装
-
-1. 安装依赖：
-```bash
-pip install -r requirements.txt
-```
-
-2. 运行程序：
-```bash
-python JSFinder_GUI.py
-```
 
 ## 使用说明
 
